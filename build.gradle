@@ -1,0 +1,61 @@
+//引入根工程下的统一版本管理文件
+apply from: this.rootProject.file('imooc.gradle')
+
+buildscript {
+    ext.kotlin_version = '1.6.21'
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-releases/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-snapshots/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        //greendao插件依赖
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'
+        //ARouter插件依赖
+        classpath "com.alibaba:arouter-register:1.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://jitpack.io" }
+//        //项目自己的仓库
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-releases/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-snapshots/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+    }
+}

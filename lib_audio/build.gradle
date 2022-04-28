@@ -1,0 +1,136 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.alibaba.arouter'
+apply plugin: 'maven-publish'
+
+def pomVersionName = '1.0.0-SNAPSHOT'
+def pomName = this.getName()
+def pomDescription = 'the audio library for all project'
+def versionString = '1.0'
+def versionNumber = 1
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lint {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //占位主工程android原生库
+    compileOnly rootProject.depsLibs.appcompact
+    compileOnly rootProject.depsLibs.design
+    compileOnly rootProject.depsLibs.recyclerview
+
+    //占位主工程的greenDao类库
+    compileOnly rootProject.depsLibs.greendao
+    //占位主工程的eventbus库
+    compileOnly rootProject.depsLibs.eventbus
+    //占位主工程的rxjava库
+    compileOnly rootProject.depsLibs.rxjava
+    //占位主工程arouter库
+    compileOnly(rootProject.depsLibs.arouterapi) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.depsLibs.aroutercompiler
+
+    //占位主工程自己源码库
+    compileOnly project(':lib_image_loader')
+    compileOnly project(':lib_commin_ui')
+    compileOnly project(':lib_share')
+    compileOnly project(':lib_base')
+}
+
+greendao {
+    //其它配置保持默认,有需要再研究
+    schemaVersion 1 //数据库版本号
+    daoPackage 'com.imooc.lib_audio.mediaplayer.db' //dao,master类所在包
+}
+
+
+////上传maven配置
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: NEXUS_REPOSITORY_URL) {
+//                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+//            }
+//            pom.project {
+//                name pomName
+//                version pomVersionName
+//                description pomDescription
+//                artifactId pomVersionName
+//                groupId POM_GROUPID
+//                packaging POM_PACKAGING
+//            }
+//        }
+//    }
+//}
+
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+
+publishing {
+    publications {
+        // 定义一个名为 Production 的发布
+        Production(MavenPublication) {
+            // 使用方引用 implementation 'cn.com.jack:mavendemo:2.7.0-SNAPSHOT'
+            groupId = POM_GROUPID
+            artifactId = pomVersionName
+            version = pomName
+            // 必须有这个 否则不会上传AAR包
+            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+            // 上传source，这样使用方可以看到方法注释
+            artifact generateSourcesJar
+        }
+    }
+
+    repositories {
+        // 定义一个 maven 仓库
+        maven {
+            // 可以有且仅有一个仓库不指定 name 属性，会隐式设置为 Maven
+            // 根据 versionName 来判断仓库地址
+            url = NEXUS_REPOSITORY_URL
+            // 仓库用户名密码
+            credentials {
+                username = NEXUS_USERNAME
+                password = NEXUS_PASSWORD
+            }
+        }
+//        // 定义第二个 maven 仓库，名为 Nexus
+//        maven {
+//            // 必须显示指定 name
+//            name = "nexus"
+//            url = NEXUS_REPOSITORY_URL
+//        }
+    }
+}

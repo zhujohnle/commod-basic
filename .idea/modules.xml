@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imooc_music_app.iml" filepath="$PROJECT_DIR$/.idea/modules/imooc_music_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imooc_voice/imooc_music_app.imooc_voice.iml" filepath="$PROJECT_DIR$/.idea/modules/imooc_voice/imooc_music_app.imooc_voice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_audio/imooc_music_app.lib_audio.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_audio/imooc_music_app.lib_audio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_base/imooc_music_app.lib_base.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_base/imooc_music_app.lib_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_commin_ui/imooc_music_app.lib_commin_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_commin_ui/imooc_music_app.lib_commin_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_image_loader/imooc_music_app.lib_image_loader.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_image_loader/imooc_music_app.lib_image_loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_network/imooc_music_app.lib_network.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_network/imooc_music_app.lib_network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_pullalive/imooc_music_app.lib_pullalive.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_pullalive/imooc_music_app.lib_pullalive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_qrcode/imooc_music_app.lib_qrcode.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_qrcode/imooc_music_app.lib_qrcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_share/imooc_music_app.lib_share.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_share/imooc_music_app.lib_share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_update/imooc_music_app.lib_update.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_update/imooc_music_app.lib_update.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_video/imooc_music_app.lib_video.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_video/imooc_music_app.lib_video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_webview/imooc_music_app.lib_webview.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_webview/imooc_music_app.lib_webview.iml" />
+    </modules>
+  </component>
+</project>

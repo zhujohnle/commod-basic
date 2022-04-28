@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.vectordrawable:vectordrawable-animated:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dfc92ad3e464b9174ea40ad0e485e47a/res" />
+      <root url="file://$USER_HOME$/Documents/gradle-5.4.1/caches/transforms-3/119d2257c7057cf1cd98d3e074fad5f8/transformed/vectordrawable-animated-1.0.0/res" />
+      <root url="file://$USER_HOME$/Documents/gradle-5.4.1/caches/transforms-3/e32e5a3bbf7d39b9e98353029d750060/transformed/vectordrawable-animated-1.0.0/res" />
+      <root url="jar://$USER_HOME$/Documents/gradle-5.4.1/caches/transforms-3/e32e5a3bbf7d39b9e98353029d750060/transformed/vectordrawable-animated-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Documents/gradle-5.4.1/caches/transforms-3/e32e5a3bbf7d39b9e98353029d750060/transformed/vectordrawable-animated-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Documents/gradle-5.4.1/caches/modules-2/files-2.1/androidx.vectordrawable/vectordrawable-animated/1.0.0/24f92bcc89d979cd8b99ae40def4e395850a6466/vectordrawable-animated-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
